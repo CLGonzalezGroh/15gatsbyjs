@@ -8,6 +8,6 @@
 const React = require("react")
 const Layout = require("./src/components/layout.js").default
 
-exports.wrapRootElement = ({ element }) => {
+exports.wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>
 }

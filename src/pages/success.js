@@ -12,7 +12,7 @@ export default function success() {
         <h2>Compra Exitosa!</h2>
         <p>Estero que disfrutes tu swag, lucelo con orgullo</p>
         <p>Te esperamos de vuelta. No pares de aprende!</p>
-        <span rol="img" aria-label="emoji">
+        <span role="img" aria-label="emoji">
           ❤
         </span>
         <Link to="/">
