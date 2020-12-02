@@ -100,7 +100,7 @@ export const StyledJumbo = styled.div`
     padding: 2rem 4rem;
     flex-direction: row;
     & h2 {
-      font-size: 1rem;
+      font-size: 1.5rem;
     };
     & small{
       font-size: 0.8rem;

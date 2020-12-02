@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `15 Gatsby Cli`,
@@ -31,6 +35,22 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography.js`,
+      },
+    },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        connectionString: `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_SERVER}/`,
+        dbName: process.env.DB_NAME,
+        collection: process.env.DB_COLLECTION,
+        extraParams: {
+          retryWrites: true,
+          w: `majority`,
+        },
+        clientOptions: {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
