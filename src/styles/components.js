@@ -395,6 +395,8 @@ export const QtySelect = styled.div`
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     max-width: 40px;
     max-height: 40px;
+    text-align: center;
+    outline: none;
   }
 `
 export const SizeSelect = styled.div`

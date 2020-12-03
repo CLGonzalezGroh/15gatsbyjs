@@ -19,8 +19,8 @@ const Layout = ({ children }) => {
       <Content>
         <main>{children}</main>
         <Footer>
-          con ❤ por
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          Hecho con ❤ por
+          <a href="https://twitter.com/CeGonzalezGroh">@CeGonzalezGroh</a>
         </Footer>
       </Content>
     </>

@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components"
 
-import { SEO, Jumbo } from "../components"
+import { SEO, Jumbo, Products } from "../components"
 
 export const query = graphql`
-  query GET_DESCRIPTION {
+  query GET_DATA {
     allSite {
       edges {
         node {
@@ -15,25 +14,27 @@ export const query = graphql`
         }
       }
     }
-  }
-`
-const Button = styled.button`
-  width: 8rem;
-  background-color: #98ca3f;
-  border: none;
-  border-radius: 10px;
-  color: ${props => props.color || "white"};
-  &:hover {
-    color: white;
+    allMongodbGatsbyDbSwags {
+      edges {
+        node {
+          id
+          name
+          description
+          image
+          price
+        }
+      }
+    }
   }
 `
 const IndexPage = ({ data }) => {
   const description = data.allSite.edges[0].node.siteMetadata.description
+  const products = data.allMongodbGatsbyDbSwags.edges
   return (
     <>
       <SEO title="Home" />
       <Jumbo description={description} />
-      <Button color="grey">Comprar</Button>
+      <Products products={products} />
     </>
   )
 }
